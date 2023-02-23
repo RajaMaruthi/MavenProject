@@ -65,6 +65,7 @@ public class Tc_Login
 		driver.navigate().back();
 		
 		System.out.println("Navigating to back page");
+		System.out.println("-------");
 		
 		
 		
