@@ -64,6 +64,8 @@ public class Tc_Login
 		takescreenshots();
 		driver.navigate().back();
 		
+		System.out.println("Navigating to back page");
+		
 		
 		
 	}
