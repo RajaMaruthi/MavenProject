@@ -1,8 +1,13 @@
 package com.tests;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,6 +40,7 @@ public class Tc_Login
 		driver.findElement(By.name("ctl00$CPHContainer$txtUserLogin")).sendKeys("maruthiraja@gmail.com");
 		driver.findElement(By.name("ctl00$CPHContainer$txtPassword")).sendKeys("12345");
 		driver.findElement(By.name("ctl00$CPHContainer$btnLoginn")).click();
+		takescreenshots();
 		
 		
 	}
@@ -55,8 +61,25 @@ public class Tc_Login
 		String capch=ele.getText();
 		driver.findElement(By.name("ctl00$CPHContainer$txtVarificationCode")).sendKeys(capch);
 		driver.findElement(By.name("ctl00$CPHContainer$btnRegistration")).click();
+		takescreenshots();
 		driver.navigate().back();
 		
+		
+		
+	}
+	
+	public void takescreenshots()
+	{
+		
+		TakesScreenshot screen=(TakesScreenshot)driver;
+		File scrfile=screen.getScreenshotAs(OutputType.FILE);
+		File destfile=new File("G:\\MavenProjectDemo\\maruthiqa\\screenshots\\login.png");
+		try {
+			FileUtils.copyFile(scrfile, destfile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
