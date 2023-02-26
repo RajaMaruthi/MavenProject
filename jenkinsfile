@@ -30,13 +30,13 @@ pipeline
       }  
     }
     
-    stage('deploy')
+    stage('install')
     {
       
       steps
       {
-      
-        echo "Deploying the project...."
+        echo "installing the project...."
+        bat "mvn install"
        }
      }  
     }
