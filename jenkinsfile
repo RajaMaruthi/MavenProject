@@ -36,6 +36,7 @@ pipeline
       steps
       {
         echo "installing the project...."
+        echo "Installing the project to local repo....."
         bat "mvn install"
        }
      }  
